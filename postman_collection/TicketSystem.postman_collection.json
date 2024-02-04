@@ -1,0 +1,167 @@
+{
+	"info": {
+		"_postman_id": "5597c869-0334-498d-a3be-b26da7766406",
+		"name": "TicketSystem",
+		"description": "Tis is used to maintain a TicketSystem",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26830283"
+	},
+	"item": [
+		{
+			"name": "CreateUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\": \"max\",\r\n    \"emailId\": \"max@@gmail.com\",\r\n    \"roleId\": \"f8af17f5-1caa-47a9-bd8b-a196aa36d654\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:2103/ticketsystem/user/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2103",
+					"path": [
+						"ticketsystem",
+						"user",
+						"save"
+					]
+				},
+				"description": "This is used To CreateUser who are part of the WorkFlow."
+			},
+			"response": []
+		},
+		{
+			"name": "createRole",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"roleType\":\"CODER\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:2103/ticketsystem/role/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2103",
+					"path": [
+						"ticketsystem",
+						"role",
+						"save"
+					]
+				},
+				"description": "Create Role with SUPERADMIN,CODER,ADMIN,MANAGER"
+			},
+			"response": []
+		},
+		{
+			"name": "CreateTicket",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"createdBy\": \"tim@gmail.com\",\r\n    \"description\": \"Payment Awating\",\r\n    \"subject\": \"Payment on Hold \"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:2103/ticketsystem/ticket/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2103",
+					"path": [
+						"ticketsystem",
+						"ticket",
+						"create"
+					]
+				},
+				"description": "This is used to raise a ticket initially."
+			},
+			"response": []
+		},
+		{
+			"name": "getTicketEvent",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:2103/ticketsystem/ticket_status/0cf03a65-1abe-4163-8f43-630e913f3993?pageNumber=1&count=100",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2103",
+					"path": [
+						"ticketsystem",
+						"ticket_status",
+						"0cf03a65-1abe-4163-8f43-630e913f3993"
+					],
+					"query": [
+						{
+							"key": "pageNumber",
+							"value": "1"
+						},
+						{
+							"key": "count",
+							"value": "100"
+						}
+					]
+				},
+				"description": "This is used to view the Entire History of the Ticket"
+			},
+			"response": []
+		},
+		{
+			"name": "upDateTicket",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ticketId\": \"cc9cba25-d355-475e-ac5f-e68913da0c6c\",\r\n    \"ticketStatus\":\"APPROVED\",\r\n    \"assignee\":\"harishfcb10m@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:2103/ticketsystem/ticket/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2103",
+					"path": [
+						"ticketsystem",
+						"ticket",
+						"update"
+					]
+				},
+				"description": "This is used to update the request"
+			},
+			"response": []
+		}
+	]
+}
