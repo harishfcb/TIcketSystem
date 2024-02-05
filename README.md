@@ -7,7 +7,7 @@ This Spring Boot application serves as a comprehensive ticketing system with an 
 ## 1. Create User
 
 
-This is used to create user who are part of the WorkFlow evey user will have a have roleId  the user may be Coder,Admin,Manager,SuperAdmin.The users who are Coder must have have a mangerId.So When a Coder Creates a Ticket it will be automatically Assigned to the manger asssociated with the user.
+This is used to create user who are part of the WorkFlow evey user will have a have roleId  the user may be Coder,Admin,Manager,SuperAdmin.The users who are Coder must have have a mangerId.So When a Coder Creates a Ticket it will be automatically Assigned to the manger asssociated with the  user.
 
 - **Endpoint:** `/ticketsystem/user/save`
 - **Request Method:** POST
