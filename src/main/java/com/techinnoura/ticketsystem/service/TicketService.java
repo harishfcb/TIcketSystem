@@ -28,4 +28,8 @@ public class TicketService {
     public Ticket updateTicket(Ticket ticket) throws Exception {
         return ticketHandler.updateTicket(ticket);
     }
+
+    public Ticket findTicketById(String ticketId) throws Exception {
+        return ticketHandler.findTicketById(ticketId);
+    }
 }

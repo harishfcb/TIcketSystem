@@ -1,12 +1,14 @@
 package com.techinnoura.ticketsystem.handler;
 
 
-import com.techinnoura.ticketsystem.commonUtils.CommonUtils;
+import com.techinnoura.ticketsystem.CommonUtils.CommonUtils;
+import com.techinnoura.ticketsystem.exception.UserException;
 import com.techinnoura.ticketsystem.model.RoleType;
 import com.techinnoura.ticketsystem.model.User;
 import com.techinnoura.ticketsystem.repository.RoleRepository;
 import com.techinnoura.ticketsystem.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 
 import java.util.Optional;
@@ -28,11 +30,11 @@ public class UserHandler {
         Optional<User> existingUser = userRepository.findByEmailId(user.getEmailId());
 
         if(existingUser.isPresent()){
-            throw new Exception("User with this Email Already exists");
+            throw new UserException("User with this Email Already exists", HttpStatus.BAD_REQUEST);
         }
 
         if (RoleType.CODER.equals(commonUtils.roleTypeFromRoleId(user.getRoleId())) && (user.getManagerId() == null || user.getManagerId().isEmpty())) {
-            throw new Exception("Coders must have a manager. Please provide a valid managerId.");
+            throw new UserException("Coders must have a manager. Please provide a valid managerId ",HttpStatus.BAD_REQUEST);
         }
 
         if(RoleType.MANAGER.equals(commonUtils.roleTypeFromRoleId(user.getRoleId()))){

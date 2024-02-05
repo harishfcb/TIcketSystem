@@ -24,9 +24,9 @@ public class FilterTicketRepository {
         Sort sort = Sort.by(Sort.Order.desc("timeStamp"));
         Pageable pageable = PageRequest.of(pageNumber - 1, count, sort);
 
-        Criteria poCriteria = new Criteria();
-        poCriteria.andOperator(Criteria.where("ticketId").is(ticketId));
-        query.addCriteria(poCriteria);
+        Criteria criteria = new Criteria();
+        criteria.andOperator(Criteria.where("ticketId").is(ticketId));
+        query.addCriteria(criteria);
         return mongoTemplate.find(query.with(pageable), TicketEvent.class, "ticketEvent");
 
 

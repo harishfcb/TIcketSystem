@@ -162,6 +162,27 @@
 				"description": "This is used to update the request"
 			},
 			"response": []
+		},
+		{
+			"name": "getTicket",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:2103/ticketsystem/ticket/bd0fcd2d-57be-4f85-984c-01f05afdeafd",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2103",
+					"path": [
+						"ticketsystem",
+						"ticket",
+						"bd0fcd2d-57be-4f85-984c-01f05afdeafd"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
